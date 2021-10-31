@@ -1,0 +1,6 @@
+*.cfg
+
+.vscode
+
+__pycache__
+
