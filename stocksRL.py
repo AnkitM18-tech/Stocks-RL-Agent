@@ -49,7 +49,7 @@ env_training = lambda: gym.make('stocks-v0', df=df, frame_bound=((5,200)),window
 env = DummyVecEnv([env_training])
 
 model = A2C('MlpLstmPolicy', env, verbose=1)
-model.learn(total_timesteps=1000000)
+model.learn(total_timesteps=10000)
 
 #Visualizing
 env = gym.make('stocks-v0',df=df, frame_bound = ((200,253)),window_size=5)
@@ -94,7 +94,7 @@ training_env = lambda: env2
 env = DummyVecEnv([training_env])
 
 model = A2C('MlpLstmPolicy', env, verbose=1)
-model.learn(total_timesteps=100000)
+model.learn(total_timesteps=10000)
 
 env = MyCustomEnv(df=df2,  window_size=5, frame_bound=(700,1000))
 obs = env.reset()
